@@ -22,6 +22,7 @@ class Category extends MY_Controller
         $this->layout('category/default', $this->_data);
     }
 
+    //@todo: doing
     public function edit($cate_id = NULL)
     {
         if ($cate_id) {
@@ -37,6 +38,7 @@ class Category extends MY_Controller
                 if ($this->__check_category($cate_id)) {
                     $cate_name = $this->input->post('cate_name');
                     if ($cate_id) {
+                        die('pending');
                         $this->category_model->edit_category($cate_id, $cate_name);
                     } else {
                         $this->category_model->insert_category($cate_name);
